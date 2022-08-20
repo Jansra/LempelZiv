@@ -1,4 +1,4 @@
 # LempelZiv
-Implementing LZ77 compression from scratch.
+Attempt to mplement LZ77 compression from scratch. Work in progress. 
 
-To run the current version, modify the input in main and run the code. 
+To run the current version, modify the input in main.
