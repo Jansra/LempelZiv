@@ -22,29 +22,18 @@ def lempelziv(text, length):
         match = ""
         while index < len(text):
             window = text[index:index+length]
-            print("Window: " + '"' + window + '"')
             input_before = text[0:index-1]
-            print("Input before: " + '"' + input_before + '"')
             offset = input_before.find(window)
-            print("Offset: " + '"' + str(offset) + '"')
             if offset == -1:
-                print("----------IF--------------------")
                 output += window[0]
-                print("Output: " + '"' + output + '"')
                 index += 1
             else:
-                print("----------ELSE--------------------")
                 match += window
                 search_input = text[offset+length:index+1]
-                print("Search input: " + '"' + search_input + '"')
                 search_string = text[index+length:len(text)]
-                print("Search string: " + '"' + search_string + '"')
                 match_length = longest_string_match(search_input, search_string)
-                print("Match length: " + '"' + str(match_length) + '"')
                 output += "("+ str(offset) + "," + str(match_length + length) +")"
-                print("Output: " + '"' + output + '"')
                 index += match_length + length
-                print("--------------------------------------------")
         return output
     else:
         return "Not a valid input."
