@@ -22,7 +22,7 @@ def lempelziv(text, length):
         match = ""
         while index < len(text):
             window = text[index:index+length]
-            input_before = text[0:index-1]
+            input_before = text[0:index]
             offset = input_before.find(window)
             if offset == -1:
                 output += window[0]
@@ -41,4 +41,4 @@ def lempelziv(text, length):
 
 if __name__ == '__main__':
     text = "This is a string, why it is a string."
-    print(str(lempelziv(text, 2)))
+    print(str(lempelziv(text, 6)))
